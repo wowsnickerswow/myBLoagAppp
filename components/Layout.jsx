@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from './Header';
+import HeaderBurger from './HeaderBurger';
 
 const Layout = ({ children }) => (
   <>
-    <Header />
+    <HeaderBurger />
     {children}
   </>
 );

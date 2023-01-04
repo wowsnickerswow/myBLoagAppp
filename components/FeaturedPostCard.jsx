@@ -1,29 +1,55 @@
 import React from 'react';
 import moment from 'moment';
-import Image from 'next/image';
+// import Image from 'next/image';
 import Link from 'next/link';
 
 const FeaturedPostCard = ({ post }) => (
-  <div className="relative h-72">
-    <div className="absolute rounded-lg bg-center bg-no-repeat bg-cover shadow-md inline-block w-full h-72" style={{ backgroundImage: `url('${post.featuredImage.url}')` }} />
-    <div className="absolute rounded-lg bg-center bg-gradient-to-b opacity-50 from-gray-400 via-gray-700 to-black w-full h-72" />
-    <div className="flex flex-col rounded-lg p-4 items-center justify-center absolute w-full h-full">
-      <p className="text-white mb-4 text-shadow font-semibold text-xs">{moment(post.createdAt).format('MMM DD, YYYY')}</p>
-      <p className="text-white mb-4 text-shadow font-semibold text-2xl text-center">{post.title}</p>
-      <div className="flex items-center absolute bottom-5 w-full justify-center">
+
+  <div class="max-w-lg bg-white h-full border border-gray-300 rounded-lg shadow-lg">
+    <Link href={`/post/${post.slug}`}><span className="cursor-pointer absolute w-full h-full" />
+      <div className="rounded-lg bg-center bg-no-repeat bg-cover inline-block w-full h-36" style={{ backgroundImage: `url('${post.featuredImage.url}')` }} />
+    </Link>
+
+    <div class="p-5 ">
+      <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-600 dark:text-white">{post.title}</h5>
+      <p className="flex-initial text-gray-400 text-xs align-text-bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" className="flex-initial h-4 w-4 inline mr-2 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg> <Link href="/" />{moment(post.createdAt).format('MMM DD, YYYY')}
+      </p>
+
+    </div>
+
+  </div>
+  // <div className=" flex h-72  justify-center">
+  //   <div className="flex-row rounded-lg  absolute bottom-0">
+  //     <div className="flex-initial" />
+  //     <div className="flex-initial">
+  //       <div className="rounded-lg bg-center bg-no-repeat bg-cover inline-block w-full h-64" style={{ backgroundImage: `url('${post.featuredImage.url}')` }} />
+  //     </div>
+  //     <p className="flex-initial text-slate-500 hover:text-blue-600 text-xl">{post.title}</p>
+  //     <br />
+  //     <div className="flex">
+  //       <svg xmlns="http://www.w3.org/2000/svg" className="flex-initial h-4 w-4 inline mr-2 text-grey-100" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  //         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+  //       </svg>
+  //       <p className="flex-initial text-slate-400 text-xs">
+  //         <Link href="/" />{moment(post.createdAt).format('MMM DD, YYYY')}
+  //       </p>
+  //     </div>
+  /* <div className="flex items-center absolute bottom-5 w-full justify-center">
         <Image
           unoptimized
           alt={post.author.name}
-          height="30"
-          width="30"
+          height="15"
+          width="15"
           className="align-middle drop-shadow-lg rounded-full"
           src={post.author.photo.url}
         />
         <p className="inline align-middle text-white text-shadow ml-2 font-medium">{post.author.name}</p>
-      </div>
-    </div>
-    <Link href={`/post/${post.slug}`}><span className="cursor-pointer absolute w-full h-full" /></Link>
-  </div>
+      </div> */
+  // </div>
+  // </div>
 );
 
 export default FeaturedPostCard;
