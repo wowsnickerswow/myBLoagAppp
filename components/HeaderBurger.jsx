@@ -18,7 +18,7 @@ export default function Header() {
     <div className=" container mx-auto flex items-center justify-between bg-white shadow-lg rounded-lg p-8 my-10 md:my-3">
       <div className="md:float-left block text-justify">
         <Link href="/">
-          <span className="cursor-pointer font-bold text-black md:text-lg pb-8">feedback-bazar.com</span>
+          <span className="cursor-pointer font-bold text-blue-400 md:text-lg pb-8">feedback</span><span className="cursor-pointer font-bold text-black md:text-lg pb-8">-bazar.com</span>
         </Link>
       </div>
       <nav>

@@ -18,7 +18,7 @@ const PostCard = ({ post }) => (
       />
     </div> */}
     <div className="flex flex-col items-stretch md:flex-row md:max-w-5xl rounded-lg bg-white shadow-lg ">
-      <img src={post.featuredImage.url} alt="" className="w-full max-h-40 max-w-12 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" />
+      <img src={post.featuredImage.url} alt="" className="w-full max-h-40 max-w-24 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" />
 
       <div className="p-6 flex flex-col justify-between w-full">
         <h1 className="text-gray-900 text-xl font-semibold mb-2">

@@ -10,12 +10,12 @@ const FeaturedPostCard = ({ post }) => (
       <div className="rounded-lg bg-center bg-no-repeat bg-cover inline-block w-full h-36" style={{ backgroundImage: `url('${post.featuredImage.url}')` }} />
     </Link>
 
-    <div class="p-5 ">
+    <div class="p-5">
       <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-600 dark:text-white">{post.title}</h5>
       <p className="flex-initial text-gray-400 text-xs align-text-bottom">
         <svg xmlns="http://www.w3.org/2000/svg" className="flex-initial h-4 w-4 inline mr-2 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg> <Link href="/" />{moment(post.createdAt).format('MMM DD, YYYY')}
+        </svg> <Link href="/">{moment(post.createdAt).format('MMM DD, YYYY')} </Link>
       </p>
 
     </div>
